@@ -16,6 +16,10 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
+``` r
+library(readxl)
+```
+
 Let’s import a dataset.
 
 ``` r
@@ -147,4 +151,11 @@ pups_df =
 ``` r
 pups_df =
   janitor::clean_names(pups_df)
+```
+
+## Excel
+
+``` r
+mlb_df =
+  read_excel("data_import_examples/mlb11.xlsx")
 ```
