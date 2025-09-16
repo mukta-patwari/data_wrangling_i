@@ -18,6 +18,7 @@ library(tidyverse)
 
 ``` r
 library(readxl)
+library(haven)
 ```
 
 Let’s import a dataset.
@@ -158,4 +159,23 @@ pups_df =
 ``` r
 mlb_df =
   read_excel("data_import_examples/mlb11.xlsx")
+```
+
+Import LotR word counts
+
+``` r
+fotr_df =
+  read_excel("data_import_examples/LotR_Words.xlsx", range = "B3:D6")
+```
+
+## SAS
+
+Import PULSE dataset
+
+``` r
+pulse_df =
+  read_sas("data_import_examples/public_pulse_data.sas7bdat")
+
+pulse_df =
+  janitor::clean_names(pulse_df)
 ```
