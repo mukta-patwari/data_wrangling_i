@@ -179,3 +179,14 @@ pulse_df =
 pulse_df =
   janitor::clean_names(pulse_df)
 ```
+
+## read.csv
+
+``` r
+litters_df_base =
+  read.csv("Data_import_examples/FAS_litters.csv")
+
+# Messier in comparison to read_csv
+```
+
+## Data exporting

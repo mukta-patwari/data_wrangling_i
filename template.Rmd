@@ -83,12 +83,16 @@ pulse_df =
 
 ## read.csv
 
-```{r, eval = fALSE}
+```{r}
 litters_df_base =
   read.csv("Data_import_examples/FAS_litters.csv")
 
 # Messier in comparison to read_csv
 ```
 
+## Data exporting
+```{r}
+
+```
 
 
