@@ -118,4 +118,15 @@ filter(pups_df, sex == 1)
 filter(pups_df, pd_walk < 11, sex == 2)
 ```
 
+## `mutate`
+
+use `mutate()` to create or modify variables
+
+```{r}
+mutate(
+  litters_df,
+  wt_gain = gd18_weight - gd0_weight,
+  group = str_to_lower(group)
+)
+```
 

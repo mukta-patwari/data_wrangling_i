@@ -527,3 +527,31 @@ filter(pups_df, pd_walk < 11, sex == 2)
     ##  9 #5/4/2/95/2       2      NA      14        7      10
     ## 10 #5/4/2/95/2       2      NA      14        7      10
     ## # ℹ 117 more rows
+
+## `mutate`
+
+use `mutate()` to create or modify variables
+
+``` r
+mutate(
+  litters_df,
+  wt_gain = gd18_weight - gd0_weight,
+  group = str_to_lower(group)
+)
+```
+
+    ## # A tibble: 49 × 9
+    ##    group litter_number   gd0_weight gd18_weight gd_of_birth pups_born_alive
+    ##    <chr> <chr>                <dbl>       <dbl>       <dbl>           <dbl>
+    ##  1 con7  #85                   19.7        34.7          20               3
+    ##  2 con7  #1/2/95/2             27          42            19               8
+    ##  3 con7  #5/5/3/83/3-3         26          41.4          19               6
+    ##  4 con7  #5/4/2/95/2           28.5        44.1          19               5
+    ##  5 con7  #4/2/95/3-3           NA          NA            20               6
+    ##  6 con7  #2/2/95/3-2           NA          NA            20               6
+    ##  7 con7  #1/5/3/83/3-3/2       NA          NA            20               9
+    ##  8 con8  #3/83/3-3             NA          NA            20               9
+    ##  9 con8  #2/95/3               NA          NA            20               8
+    ## 10 con8  #3/5/2/2/95           28.5        NA            20               8
+    ## # ℹ 39 more rows
+    ## # ℹ 3 more variables: pups_dead_birth <dbl>, pups_survive <dbl>, wt_gain <dbl>
