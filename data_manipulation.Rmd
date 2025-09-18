@@ -130,3 +130,40 @@ mutate(
 )
 ```
 
+
+## arrange
+
+`arrange()` arranges things
+
+```{r}
+arrange(litters_df, pups_born_alive)
+arrange(litters_df, group, pups_born_alive)
+```
+
+## pipes
+
+```{r}
+litters_df =
+  read_csv("data_import_examples/FAS_litters.csv", na=c("NA", ".", "")) %>% 
+  janitor::clean_names() %>% 
+  select(group, litter_number, starts_with("gd")) %>% 
+  drop_na () %>% 
+  mutate(
+    wt_gain = gd18_weight - gd0_weight
+  )
+```
+
+learning assessment
+```{r}
+pups_df =
+  read_csv("data_import_examples/FAS_pups.csv", skip = 3, na=c("NA", ".", "")) %>% 
+  janitor::clean_names() %>% 
+  filter(sex == 1) %>% 
+  select(-pd_ears) %>% 
+  mutate(
+    pd_pivot_7_or_more = pd_pivot > 7
+  )
+```
+
+
+
