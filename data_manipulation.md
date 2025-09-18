@@ -487,3 +487,43 @@ drop_na(litters_df, gd0_weight)
     ## 10 Mod7  #4/2/95/2           23.5        NA            19               9
     ## # ℹ 24 more rows
     ## # ℹ 2 more variables: pups_dead_birth <dbl>, pups_survive <dbl>
+
+learning assessment
+
+``` r
+filter(pups_df, sex == 1)
+```
+
+    ## # A tibble: 155 × 6
+    ##    litter_number   sex pd_ears pd_eyes pd_pivot pd_walk
+    ##    <chr>         <dbl>   <dbl>   <dbl>    <dbl>   <dbl>
+    ##  1 #85               1       4      13        7      11
+    ##  2 #85               1       4      13        7      12
+    ##  3 #1/2/95/2         1       5      13        7       9
+    ##  4 #1/2/95/2         1       5      13        8      10
+    ##  5 #5/5/3/83/3-3     1       5      13        8      10
+    ##  6 #5/5/3/83/3-3     1       5      14        6       9
+    ##  7 #5/4/2/95/2       1      NA      14        5       9
+    ##  8 #4/2/95/3-3       1       4      13        6       8
+    ##  9 #4/2/95/3-3       1       4      13        7       9
+    ## 10 #2/2/95/3-2       1       4      NA        8      10
+    ## # ℹ 145 more rows
+
+``` r
+filter(pups_df, pd_walk < 11, sex == 2)
+```
+
+    ## # A tibble: 127 × 6
+    ##    litter_number   sex pd_ears pd_eyes pd_pivot pd_walk
+    ##    <chr>         <dbl>   <dbl>   <dbl>    <dbl>   <dbl>
+    ##  1 #1/2/95/2         2       4      13        7       9
+    ##  2 #1/2/95/2         2       4      13        7      10
+    ##  3 #1/2/95/2         2       5      13        8      10
+    ##  4 #1/2/95/2         2       5      13        8      10
+    ##  5 #1/2/95/2         2       5      13        6      10
+    ##  6 #5/5/3/83/3-3     2       5      13        8      10
+    ##  7 #5/5/3/83/3-3     2       5      14        7      10
+    ##  8 #5/5/3/83/3-3     2       5      14        8      10
+    ##  9 #5/4/2/95/2       2      NA      14        7      10
+    ## 10 #5/4/2/95/2       2      NA      14        7      10
+    ## # ℹ 117 more rows
