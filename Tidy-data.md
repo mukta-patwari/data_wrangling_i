@@ -75,3 +75,19 @@ analysis_df =
          time = c("pre", "post", "pre", "post"),
          mean = c(4, 10, 4.2, 4))
 ```
+
+## Pivot wider with better readability
+
+``` r
+analysis_df %>% 
+  pivot_wider(
+    names_from = time, # take the names from an existing variable
+    values_from = mean # take the values from an existing variable
+  ) %>% 
+  knitr::kable()
+```
+
+| group     | pre | post |
+|:----------|----:|-----:|
+| treatment | 4.0 |   10 |
+| control   | 4.2 |    4 |
