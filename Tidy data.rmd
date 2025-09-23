@@ -53,6 +53,9 @@ litters_df =
 ## Pivot wider
 
 ```{r}
-
+analysis_df =
+  tibble(group = c("treatment", "treatment", "control", "control"),
+         time = c("pre", "post", "pre", "post"),
+         mean = c(4, 10, 4.2, 4))
 ```
 

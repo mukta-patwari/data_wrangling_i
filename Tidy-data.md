@@ -68,3 +68,10 @@ litters_df =
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ## Pivot wider
+
+``` r
+analysis_df =
+  tibble(group = c("treatment", "treatment", "control", "control"),
+         time = c("pre", "post", "pre", "post"),
+         mean = c(4, 10, 4.2, 4))
+```
