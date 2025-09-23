@@ -39,3 +39,32 @@ pulse_df =
   mutate(visit = replace(visit, visit =="bl", "00m")) %>% 
   relocate(id, visit)
 ```
+
+## Pivot longer example 2
+
+``` r
+litters_df =
+  read_csv("data_import_examples/FAS_litters.csv", na = c("NA", ".", "")) %>% 
+  janitor::clean_names() %>% 
+  pivot_longer(
+    cols = gd0_weight:gd18_weight, # Columns of interest, integrating the columns into each other
+    names_to = "gd_time", # specifies the name of the new column that will be created to store the original column names from the "wide" format data, after they have been pivoted into a "long" format
+    values_to = "weight", # gives the name of the variable that will be created from the data stored in the cell value
+) %>% 
+  mutate(gd_time = case_match(
+    gd_time,
+    "gd0_weight" ~ 0,
+    "gd18_weight" ~ 18
+  ))
+```
+
+    ## Rows: 49 Columns: 8
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (2): Group, Litter Number
+    ## dbl (6): GD0 weight, GD18 weight, GD of Birth, Pups born alive, Pups dead @ ...
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+## Pivot wider
